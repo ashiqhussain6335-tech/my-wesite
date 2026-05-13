@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design Knowledge Quiz — TopoCore Global</title>
+<meta name="description" content="Test your structural and offshore engineering design knowledge with TopoCore Global's interactive quiz.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><div class="logo-box">TE</div><div><span class="logo-text">TOPOCORE GLOBAL</span><span class="logo-sub">Engineering</span></div></a>
+    <div class="nav-links"><a href="index.html">Home</a><a href="about.html">Company</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="quiz.html">Quiz</a><a href="game.html">Load Path Game</a><a href="contact.html">Contact</a></div>
+    <a href="contact.html" class="nav-cta">Contact Us</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu"><a href="index.html">Home</a><a href="about.html">Company</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="quiz.html">Design Quiz</a><a href="game.html">Load Path Game</a><a href="contact.html">Contact</a></div>
+</nav>
+
+<section class="page-hero">
+  <div class="container-md">
+    <div class="fade-up">
+      <span class="section-tag">Interactive</span>
+      <h1>Structural Design <span class="gold">Quiz</span></h1>
+      <p style="margin-top:16px;color:var(--muted);font-size:16px">Test your understanding of how TopoCore approaches structural and offshore engineering design. Learn key principles along the way.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container-md">
+    <div class="quiz-container" id="quiz-app">
+      <!-- Quiz renders here via JS -->
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="logo"><div class="logo-box">TE</div><div><span class="logo-text">TOPOCORE GLOBAL</span><span class="logo-sub">Pvt Ltd</span></div></div><p>Precision structural & offshore engineering consultancy.</p></div>
+    <div class="footer-col"><h4>Navigation</h4><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a></div>
+    <div class="footer-col"><h4>Contact</h4><span>support@topocoreglobal.com</span><span>+91 6006433365</span><span>+91 7006336842</span><span>Registered in India</span></div>
+  </div>
+  <div class="footer-bottom">© 2026 TopoCore Global llc All rights reserved.</div>
+</footer>
+
+<script src="assets/main.js"></script>
+<script>
+const quizData = [
+  {
+    question: "What is the primary international code used for offshore jacket platform design in the Arabian Gulf?",
+    options: ["AISC 360", "API RP2A-WSD / LRFD", "Eurocode 3", "IS 800"],
+    correct: 1,
+    explanation: "API RP2A (Working Stress Design or LRFD) is the primary code for fixed offshore platform design. TopoCore uses this extensively for jacket platforms in the Middle East."
+  },
+  {
+    question: "During which phase of offshore jacket design is spectral fatigue analysis performed?",
+    options: ["FEED / Concept phase", "In-Place Analysis phase", "Fatigue Assessment phase", "Transportation phase"],
+    correct: 2,
+    explanation: "Spectral fatigue analysis is performed during the dedicated Fatigue Assessment phase, evaluating tubular joint fatigue lives using wave scatter data, SCF calculations, and S-N curves."
+  },
+  {
+    question: "What software tool does TopoCore primarily use for offshore jacket structural analysis?",
+    options: ["ETABS", "SACS", "SAP2000", "RISA"],
+    correct: 1,
+    explanation: "SACS (Structural Analysis Computer System) is the industry-standard software for offshore structural analysis. TopoCore uses SACS alongside ANSYS for comprehensive jacket platform design."
+  },
+  {
+    question: "In PEB (Pre-Engineered Building) design, which code governs wind and seismic load calculations?",
+    options: ["API RP2A", "ASCE 7", "DNV-OS-C101", "BS 5950"],
+    correct: 1,
+    explanation: "ASCE 7 (Minimum Design Loads for Buildings) provides the standard for calculating wind, seismic, snow, and other environmental loads for onshore structures including PEB warehouses."
+  },
+  {
+    question: "What is topology optimization in structural engineering?",
+    options: [
+      "Choosing the best steel grade for a structure",
+      "Finding the optimal material distribution within a design space to maximize structural efficiency",
+      "Optimizing the construction sequence",
+      "Selecting the most economical foundation type"
+    ],
+    correct: 1,
+    explanation: "Topology optimization finds the most efficient material layout within a given design space, subject to loads and constraints. It removes material where it's not needed, revealing the optimal load path."
+  },
+  {
+    question: "What does 'load path' mean in structural design?",
+    options: [
+      "The route trucks take to deliver materials",
+      "The continuous path through which forces travel from the point of application to the foundation/support",
+      "The sequence of load application during construction",
+      "The weight of the structure itself"
+    ],
+    correct: 1,
+    explanation: "A load path is the continuous route through which applied forces are transferred through structural members to the supports/foundations. Understanding load paths is fundamental to safe structural design."
+  },
+  {
+    question: "Which analysis is critical for ensuring offshore jacket joints survive the platform's design life?",
+    options: ["Modal analysis", "Buckling analysis", "Fatigue analysis with S-N curves", "Thermal analysis"],
+    correct: 2,
+    explanation: "Fatigue analysis using S-N curves is critical for offshore jackets because cyclic wave loading can cause joints to fail well below their static capacity. TopoCore performs both spectral and deterministic fatigue assessments."
+  },
+  {
+    question: "What tool does TopoCore use for advanced connection design in pipe racks?",
+    options: ["AutoCAD", "IDEA StatiCa", "Revit", "Tekla"],
+    correct: 1,
+    explanation: "IDEA StatiCa is used for advanced steel connection design, including beam-column joints and base-plate connections. It provides CBFEM (Component-Based Finite Element Method) analysis for complex connections."
+  },
+  {
+    question: "In offshore engineering, what does 'sea-fastening' refer to?",
+    options: [
+      "Bolting the jacket to the seabed",
+      "Securing the structure to the transport barge for ocean transit",
+      "Waterproofing the platform deck",
+      "Installing marine growth protection"
+    ],
+    correct: 1,
+    explanation: "Sea-fastening involves designing and installing temporary structural connections to secure the jacket and topsides to the transport barge during ocean transit, accounting for wave-induced motions and accelerations."
+  },
+  {
+    question: "Why is code compliance (API, AISC, DNV, ISO) critical in structural engineering?",
+    options: [
+      "It's only required for insurance purposes",
+      "It ensures structures meet minimum safety, performance, and durability requirements based on decades of research and field experience",
+      "It's optional but preferred by some clients",
+      "It only applies to government projects"
+    ],
+    correct: 1,
+    explanation: "Code compliance ensures structures are designed to withstand expected loads with adequate safety margins. These codes represent collective engineering knowledge from research, testing, and lessons learned from structural failures. TopoCore maintains 100% code compliance across all projects."
+  }
+];
+
+let currentQ = 0;
+let answers = new Array(quizData.length).fill(-1);
+const app = document.getElementById('quiz-app');
+
+function renderQuestion(){
+  const q = quizData[currentQ];
+  const pct = ((currentQ) / quizData.length * 100).toFixed(0);
+  const letters = ['A','B','C','D'];
+  
+  app.innerHTML = `
+    <div class="quiz-progress">
+      <div class="quiz-progress-bar"><div class="quiz-progress-fill" style="width:${pct}%"></div></div>
+      <div class="quiz-progress-text">${currentQ + 1} / ${quizData.length}</div>
+    </div>
+    <div class="quiz-question">${q.question}</div>
+    <div class="quiz-options">
+      ${q.options.map((opt, i) => `
+        <div class="quiz-option ${answers[currentQ] === i ? 'selected' : ''}" onclick="selectOption(${i})">
+          <span class="quiz-option-letter">${letters[i]}</span>
+          <span>${opt}</span>
+        </div>
+      `).join('')}
+    </div>
+    <div class="quiz-nav">
+      <button class="btn-outline" onclick="prevQ()" ${currentQ === 0 ? 'style="visibility:hidden"' : ''}>← Previous</button>
+      ${currentQ < quizData.length - 1 
+        ? `<button class="btn-primary" onclick="nextQ()" ${answers[currentQ] === -1 ? 'style="opacity:0.5"' : ''}>Next →</button>`
+        : `<button class="btn-primary" onclick="showResults()" ${answers[currentQ] === -1 ? 'style="opacity:0.5"' : ''}>See Results</button>`
+      }
+    </div>
+  `;
+}
+
+window.selectOption = function(i){
+  answers[currentQ] = i;
+  renderQuestion();
+};
+
+window.nextQ = function(){
+  if(answers[currentQ] === -1) return;
+  currentQ++;
+  renderQuestion();
+};
+
+window.prevQ = function(){
+  if(currentQ > 0){ currentQ--; renderQuestion(); }
+};
+
+window.showResults = function(){
+  if(answers[currentQ] === -1) return;
+  let score = 0;
+  answers.forEach((a, i) => { if(a === quizData[i].correct) score++; });
+  
+  const pctScore = Math.round(score / quizData.length * 100);
+  let grade = 'Beginner';
+  if(pctScore >= 90) grade = 'Expert Engineer';
+  else if(pctScore >= 70) grade = 'Senior Engineer';
+  else if(pctScore >= 50) grade = 'Junior Engineer';
+
+  let summaryHTML = quizData.map((q, i) => {
+    const isCorrect = answers[i] === q.correct;
+    return `
+      <div class="quiz-summary-item">
+        <h4>Q${i+1}: ${q.question}</h4>
+        <p>Your answer: <span class="${isCorrect ? 'correct' : 'wrong'}">${q.options[answers[i]]}</span>
+        ${!isCorrect ? ` — Correct: <span class="correct">${q.options[q.correct]}</span>` : ' ✓'}</p>
+        <p style="margin-top:8px">${q.explanation}</p>
+      </div>
+    `;
+  }).join('');
+
+  app.innerHTML = `
+    <div class="quiz-result">
+      <h2>Quiz Results</h2>
+      <div class="quiz-score">
+        <div class="quiz-score-num">${score}/${quizData.length}</div>
+        <div class="quiz-score-label"><strong>${grade}</strong>You scored ${pctScore}% — ${score} out of ${quizData.length} correct</div>
+      </div>
+      ${summaryHTML}
+      <div class="quiz-key-points">
+        <h3>🔑 Key Design Principles to Remember</h3>
+        <ul>
+          <li><strong>Load Path Continuity</strong> — Every structure must have a clear, continuous load path from the point of load application to the foundation.</li>
+          <li><strong>Code Compliance is Non-Negotiable</strong> — API, AISC, ASCE, DNV, and ISO codes represent decades of engineering wisdom and must be followed.</li>
+          <li><strong>Fatigue Governs Offshore Design</strong> — Cyclic wave loading means fatigue analysis (spectral + deterministic) is often the controlling design criterion.</li>
+          <li><strong>Software is a Tool, Not a Solution</strong> — SACS, ANSYS, IDEA StatiCa are powerful tools, but engineering judgment is irreplaceable.</li>
+          <li><strong>Full Lifecycle Thinking</strong> — Design must consider every phase: FEED, in-place, fatigue, transport, installation, and decommissioning.</li>
+          <li><strong>Topology Optimization</strong> — Removing material where it's not structurally needed leads to lighter, more efficient, and more sustainable designs.</li>
+          <li><strong>Connection Design Matters</strong> — Most structural failures occur at connections. Proper detailing using tools like IDEA StatiCa is critical.</li>
+        </ul>
+      </div>
+      <div style="text-align:center;margin-top:32px">
+        <button class="btn-primary" onclick="resetQuiz()">Retake Quiz</button>
+        <a href="game.html" class="btn-outline" style="margin-left:12px">Try Load Path Game →</a>
+      </div>
+    </div>
+  `;
+};
+
+window.resetQuiz = function(){
+  currentQ = 0;
+  answers = new Array(quizData.length).fill(-1);
+  renderQuestion();
+  window.scrollTo({top: 0, behavior:'smooth'});
+};
+
+renderQuestion();
+</script>
+</body>
+</html>
